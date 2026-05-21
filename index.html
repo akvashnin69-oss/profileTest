@@ -3,835 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пряничная Мастерская | Авторские русские пряники</title>
-    
-    <!-- Google Fonts -->
+    <title>Пряничная Мастерская | Авторские русские пряники ручной работы</title>
+    <meta name="description" content="Авторские русские пряники ручной работы. Натуральный мёд, ароматные специи, ручная роспись. Закажите с доставкой по Москве и России. Мастер-классы по росписи пряников.">
+    <meta name="keywords" content="пряники, русские пряники, пряничная мастерская, ручная работа, мастер-класс по росписи пряников, подарок, тульский пряник, имбирные пряники, мёд, натуральные сладости">
+    <meta property="og:title" content="Пряничная Мастерская | Авторские русские пряники">
+    <meta property="og:description" content="Авторские русские пряники ручной работы. Вкус, который возвращает в детство.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* CSS Variables / Palette */
-        :root {
-            --color-bg-main: #FDFBF7; /* Cream/Light Beige */
-            --color-bg-sec: #F4EFE6; /* Light dough */
-            --color-text: #4A3320; /* Dark chocolate/cinnamon */
-            --color-text-light: #735338;
-            --color-accent: #D98A2C; /* Honey/caramel */
-            --color-btn: #8C2727; /* Berry jam/Burgundy */
-            --color-btn-hover: #6B1D1D;
-            --color-white: #FFFFFF;
-            
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-            
-            --shadow-soft: 0 8px 24px rgba(74, 51, 32, 0.08);
-            --shadow-hover: 0 12px 32px rgba(74, 51, 32, 0.15);
-            --radius-card: 16px;
-            --radius-btn: 8px;
-            
-            --transition: all 0.3s ease-in-out;
-        }
-
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background-color: var(--color-bg-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.2;
-            color: var(--color-text);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--color-accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--color-text-light);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background-color: var(--color-btn);
-            color: var(--color-white);
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 500;
-            border: none;
-            border-radius: var(--radius-btn);
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            font-family: var(--font-body);
-        }
-
-        .btn:hover {
-            background-color: var(--color-btn-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(140, 39, 39, 0.3);
-            color: var(--color-white);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--color-btn);
-            border: 2px solid var(--color-btn);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--color-btn);
-            color: var(--color-white);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(74, 51, 32, 0.05);
-            padding: 15px 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-btn);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            color: var(--color-accent);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: var(--color-accent);
-        }
-
-        .burger {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--color-text);
-        }
-
-        /* Hero Section */
-        #hero {
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(74, 51, 32, 0.65), rgba(74, 51, 32, 0.75)), 
-                        url('https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-            color: var(--color-white);
-            padding-top: 80px; /* Offset for header */
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--color-white);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        /* Catalog Section */
-        #catalog {
-            background-color: var(--color-bg-sec);
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--color-white);
-            border-radius: var(--radius-card);
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card-img {
-            height: 240px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover .card-img img {
-            transform: scale(1.05);
-        }
-
-        .card-body {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--color-text-light);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid rgba(74, 51, 32, 0.1);
-        }
-
-        .price {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--color-accent);
-        }
-
-        /* Masterclasses Section */
-        #masterclasses {
-            background-color: var(--color-bg-main);
-        }
-
-        .split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .split-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .split-content p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: var(--color-text-light);
-        }
-
-        .features-list {
-            margin-bottom: 30px;
-        }
-
-        .features-list li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .features-list i {
-            color: var(--color-accent);
-        }
-
-        .split-img {
-            position: relative;
-        }
-
-        .split-img img {
-            border-radius: var(--radius-card);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .split-img::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--color-accent);
-            border-radius: var(--radius-card);
-            z-index: -1;
-        }
-
-        /* About Section */
-        #about {
-            background-color: var(--color-bg-sec);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-img img {
-            border-radius: 50% 50% 16px 16px;
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* Order Form Section */
-        #order {
-            background-color: var(--color-bg-main);
-            background-image: radial-gradient(var(--color-bg-sec) 2px, transparent 2px);
-            background-size: 30px 30px;
-        }
-
-        .form-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--color-white);
-            padding: 40px;
-            border-radius: var(--radius-card);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #E0D5C1;
-            border-radius: var(--radius-btn);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            color: var(--color-text);
-            background-color: var(--color-bg-main);
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(217, 138, 44, 0.2);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-submit {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #312114; /* Very dark brown */
-            color: #EEDCC4;
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            color: var(--color-white);
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            font-family: var(--font-heading);
-        }
-
-        .footer-col p, .footer-col a {
-            color: #EEDCC4;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-col a:hover {
-            color: var(--color-accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background-color: var(--color-accent);
-            color: var(--color-white);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .split-section, .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .split-img {
-                order: -1;
-            }
-            .split-img::before {
-                display: none;
-            }
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--color-white);
-                flex-direction: column;
-                gap: 0;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-                transition: clip-path 0.4s ease-in-out;
-            }
-
-            nav ul.active {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                border-top: 1px solid #eee;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 15px 20px;
-            }
-
-            .burger {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .form-wrapper {
-                padding: 25px;
-            }
-        }
-    </style>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Bakery", "name": "Пряничная Мастерская", "description": "Авторские русские пряники ручной работы и мастер-классы по росписи", "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=2000&auto=format&fit=crop", "address": { "@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "ул. Пекарская, д. 12, студия 4", "addressCountry": "RU" }, "telephone": "+79991234567", "email": "hello@pryanik-master.ru", "openingHours": "Mo-Su 10:00-20:00" }
+    </script>
+<style>
+:root {
+    --color-bg-main: #FDFBF7; --color-bg-sec: #F4EFE6; --color-text: #4A3320;
+    --color-text-light: #735338; --color-accent: #D98A2C; --color-btn: #8C2727;
+    --color-btn-hover: #6B1D1D; --color-white: #FFFFFF;
+    --font-heading: 'Playfair Display', serif; --font-body: 'Montserrat', sans-serif;
+    --shadow-soft: 0 8px 24px rgba(74,51,32,0.08); --shadow-hover: 0 12px 32px rgba(74,51,32,0.15);
+    --radius-card: 16px; --radius-btn: 8px; --transition: all 0.3s ease-in-out;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg-main);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:600;line-height:1.2;color:var(--color-text)}
+a{text-decoration:none;color:inherit;transition:var(--transition)}
+ul{list-style:none}img{max-width:100%;display:block}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:1rem;position:relative}
+.section-title::after{content:'';display:block;width:80px;height:3px;background:var(--color-accent);margin:15px auto 0;border-radius:2px}
+.section-subtitle{text-align:center;color:var(--color-text-light);margin-bottom:3rem;font-size:1.1rem}
+section{padding:80px 0}
+.btn{display:inline-block;background:var(--color-btn);color:var(--color-white);padding:14px 28px;font-size:1rem;font-weight:500;border:none;border-radius:var(--radius-btn);cursor:pointer;transition:var(--transition);text-align:center;font-family:var(--font-body)}
+.btn:hover{background:var(--color-btn-hover);transform:translateY(-2px);box-shadow:0 4px 12px rgba(140,39,39,0.3);color:var(--color-white)}
+.btn-outline{background:transparent;color:var(--color-btn);border:2px solid var(--color-btn)}
+.btn-outline:hover{background:var(--color-btn);color:var(--color-white)}
+.btn-cart{background:var(--color-accent);color:var(--color-white);border:none;padding:10px 20px;font-size:0.9rem;border-radius:var(--radius-btn);cursor:pointer;transition:var(--transition);font-family:var(--font-body);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.btn-cart:hover{background:#b8771f;transform:translateY(-2px);box-shadow:0 4px 12px rgba(217,138,44,0.3);color:var(--color-white)}
+header{position:fixed;top:0;left:0;width:100%;background:rgba(253,251,247,0.95);backdrop-filter:blur(10px);z-index:1000;box-shadow:0 2px 10px rgba(74,51,32,0.05);padding:15px 0}
+.header-content{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--color-btn);display:flex;align-items:center;gap:10px}
+.logo i{color:var(--color-accent)}
+nav ul{display:flex;gap:30px}
+nav ul li a{font-size:1rem;font-weight:500;position:relative}
+nav ul li a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-accent);transition:width 0.3s ease}
+nav ul li a:hover{color:var(--color-accent)}
+nav ul li a:hover::after{width:100%}
+nav ul li a.active{color:var(--color-accent)}
+nav ul li a.active::after{width:100%}
+.burger{display:none;font-size:1.5rem;cursor:pointer;color:var(--color-text)}
+#hero{height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(74,51,32,0.65),rgba(74,51,32,0.75)),url('https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=2000&auto=format&fit=crop')center/cover no-repeat;color:var(--color-white);padding-top:80px}
+.hero-content{max-width:800px;padding:0 20px}
+.hero-content h1{font-size:3.5rem;margin-bottom:20px;color:var(--color-white)}
+.hero-content p{font-size:1.2rem;margin-bottom:40px;opacity:0.9}
+#catalog{background:var(--color-bg-sec)}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:var(--color-white);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-soft);transition:var(--transition);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-10px);box-shadow:var(--shadow-hover)}
+.card-img{height:240px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-body{padding:25px;flex-grow:1;display:flex;flex-direction:column}
+.card-title{font-size:1.3rem;margin-bottom:10px}
+.card-desc{font-size:0.95rem;color:var(--color-text-light);margin-bottom:20px;flex-grow:1}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:15px;border-top:1px solid rgba(74,51,32,0.1)}
+.price{font-weight:600;font-size:1.2rem;color:var(--color-accent)}
+#masterclasses{background:var(--color-bg-main)}
+.split-section{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.split-content h2{font-size:2.5rem;margin-bottom:20px}
+.split-content p{margin-bottom:20px;font-size:1.05rem;color:var(--color-text-light)}
+.features-list{margin-bottom:30px}
+.features-list li{margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.features-list i{color:var(--color-accent)}
+.split-img{position:relative}
+.split-img img{border-radius:var(--radius-card);box-shadow:var(--shadow-soft)}
+.split-img::before{content:'';position:absolute;top:-20px;left:-20px;width:100%;height:100%;border:2px solid var(--color-accent);border-radius:var(--radius-card);z-index:-1}
+#about{background:var(--color-bg-sec)}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.about-img img{border-radius:50% 50% 16px 16px;box-shadow:var(--shadow-hover)}
+#achievements{background:var(--color-btn);color:var(--color-white);padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat-item{padding:20px}
+.stat-number{font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--color-accent);display:block;margin-bottom:5px}
+.stat-label{font-size:1rem;opacity:0.9}
+.stat-icon{font-size:2rem;margin-bottom:10px;opacity:0.8}
+#reviews{background:var(--color-bg-main)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.review-card{background:var(--color-white);border-radius:var(--radius-card);padding:30px;box-shadow:var(--shadow-soft);transition:var(--transition);border:1px solid rgba(74,51,32,0.05)}
+.review-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.review-header{display:flex;align-items:center;gap:15px;margin-bottom:15px}
+.review-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--color-bg-sec)}
+.review-name{font-weight:600;font-size:1.1rem}
+.review-date{font-size:0.85rem;color:var(--color-text-light)}
+.review-stars{color:var(--color-accent);font-size:0.9rem;margin-bottom:10px}
+.review-text{font-size:0.95rem;color:var(--color-text-light);line-height:1.7;font-style:italic}
+#faq{background:var(--color-bg-sec)}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:var(--color-white);border-radius:var(--radius-card);margin-bottom:15px;box-shadow:var(--shadow-soft);overflow:hidden}
+.faq-question{width:100%;padding:20px 25px;background:none;border:none;font-family:var(--font-body);font-size:1.05rem;font-weight:500;color:var(--color-text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px;text-align:left;transition:var(--transition)}
+.faq-question:hover{background:rgba(217,138,44,0.05)}
+.faq-question i{font-size:0.9rem;color:var(--color-accent);transition:transform 0.3s ease;flex-shrink:0}
+.faq-item.active .faq-question i{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding:0 25px}
+.faq-item.active .faq-answer{max-height:300px;padding:0 25px 20px}
+.faq-answer p{color:var(--color-text-light);line-height:1.7}
+#order{background:var(--color-bg-main);background-image:radial-gradient(var(--color-bg-sec) 2px,transparent 2px);background-size:30px 30px}
+.form-wrapper{max-width:600px;margin:0 auto;background:var(--color-white);padding:40px;border-radius:var(--radius-card);box-shadow:var(--shadow-hover)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;margin-bottom:8px;font-weight:500;font-size:0.95rem}
+.form-control{width:100%;padding:12px 15px;border:1px solid #E0D5C1;border-radius:var(--radius-btn);font-family:var(--font-body);font-size:1rem;color:var(--color-text);background:var(--color-bg-main);transition:var(--transition)}
+.form-control:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(217,138,44,0.2)}
+.form-control.error{border-color:var(--color-btn)}
+textarea.form-control{resize:vertical;min-height:120px}
+.form-submit{width:100%;margin-top:10px}
+.form-error{color:var(--color-btn);font-size:0.85rem;margin-top:5px;display:none}
+.form-error.show{display:block}
+#cart-summary{background:var(--color-bg-sec);padding:15px;border-radius:var(--radius-btn);margin-bottom:20px;font-size:0.95rem;display:none}
+#cart-summary.show{display:block}
+#cart-summary h4{font-family:var(--font-body);font-size:0.95rem;margin-bottom:10px}
+.cart-summary-item{display:flex;justify-content:space-between;padding:5px 0;font-size:0.9rem}
+.cart-total{display:flex;justify-content:space-between;padding-top:10px;margin-top:10px;border-top:1px solid rgba(74,51,32,0.15);font-weight:600;font-size:1rem}
+footer{background:#312114;color:#EEDCC4;padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px}
+.footer-col h4{color:var(--color-white);font-size:1.3rem;margin-bottom:20px;font-family:var(--font-heading)}
+.footer-col p,.footer-col a{color:#EEDCC4;margin-bottom:15px;display:flex;align-items:center;gap:10px}
+.footer-col a:hover{color:var(--color-accent)}
+.social-links{display:flex;gap:15px}
+.social-links a{width:40px;height:40px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:1.2rem}
+.social-links a:hover{background:var(--color-accent);color:var(--color-white);transform:translateY(-3px)}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.9rem;opacity:0.7}
+.cart-floating{position:fixed;bottom:30px;right:30px;z-index:999;background:var(--color-accent);color:var(--color-white);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;box-shadow:0 4px 16px rgba(217,138,44,0.4);transition:var(--transition);border:none}
+.cart-floating:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(217,138,44,0.5)}
+.cart-floating .cart-badge{position:absolute;top:-5px;right:-5px;background:var(--color-btn);color:var(--color-white);width:24px;height:24px;border-radius:50%;font-size:0.75rem;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+.cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:2000;opacity:0;visibility:hidden;transition:var(--transition)}
+.cart-overlay.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:-420px;width:400px;max-width:100%;height:100vh;background:var(--color-white);z-index:2001;box-shadow:-10px 0 40px rgba(0,0,0,0.15);transition:right 0.4s ease;display:flex;flex-direction:column}
+.cart-drawer.open{right:0}
+.cart-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:25px;border-bottom:1px solid rgba(74,51,32,0.1)}
+.cart-drawer-header h3{font-family:var(--font-body);font-size:1.2rem}
+.cart-drawer-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--color-text);transition:var(--transition)}
+.cart-drawer-close:hover{color:var(--color-btn)}
+.cart-drawer-body{flex-grow:1;overflow-y:auto;padding:20px 25px}
+.cart-empty{text-align:center;padding:40px 0;color:var(--color-text-light)}
+.cart-empty i{font-size:3rem;margin-bottom:15px;color:var(--color-accent)}
+.cart-item{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid rgba(74,51,32,0.08)}
+.cart-item-img{width:70px;height:70px;border-radius:var(--radius-btn);object-fit:cover;flex-shrink:0}
+.cart-item-info{flex-grow:1}
+.cart-item-title{font-weight:500;font-size:0.95rem;margin-bottom:5px}
+.cart-item-price{color:var(--color-accent);font-weight:600;font-size:0.95rem}
+.cart-item-controls{display:flex;align-items:center;gap:10px;margin-top:8px}
+.cart-item-controls button{width:30px;height:30px;border-radius:50%;border:1px solid #E0D5C1;background:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:var(--transition);color:var(--color-text)}
+.cart-item-controls button:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.cart-item-controls .qty{font-weight:500;min-width:24px;text-align:center}
+.cart-item-remove{background:none;border:none;color:var(--color-text-light);cursor:pointer;font-size:0.9rem;transition:var(--transition);padding:0 5px}
+.cart-item-remove:hover{color:var(--color-btn)}
+.cart-drawer-footer{padding:25px;border-top:1px solid rgba(74,51,32,0.1)}
+.cart-drawer-total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:600;margin-bottom:20px}
+.cart-drawer-total span:last-child{color:var(--color-accent)}
+.cart-drawer-btn{width:100%;padding:14px}
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:var(--transition)}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal-content{background:var(--color-white);border-radius:var(--radius-card);max-width:480px;width:90%;padding:40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);transform:scale(0.9);transition:transform 0.3s ease}
+.modal-overlay.open .modal-content{transform:scale(1)}
+.modal-icon{font-size:3.5rem;color:#4CAF50;margin-bottom:20px}
+.modal-content h3{font-size:1.8rem;margin-bottom:10px}
+.modal-content p{color:var(--color-text-light);margin-bottom:10px}
+.modal-details{background:var(--color-bg-sec);border-radius:var(--radius-btn);padding:15px;margin:20px 0;text-align:left;font-size:0.9rem}
+.modal-details p{margin-bottom:5px;color:var(--color-text)}
+.modal-close-btn{margin-top:10px}
+#back-to-top{position:fixed;bottom:30px;left:30px;z-index:998;width:50px;height:50px;border-radius:50%;background:var(--color-btn);color:var(--color-white);border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 12px rgba(140,39,39,0.3);transition:var(--transition);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px)}
+#back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+#back-to-top:hover{background:var(--color-btn-hover);transform:translateY(-3px)}
+.fade-in{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.fade-in-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in-left.visible{opacity:1;transform:translateX(0)}
+.fade-in-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in-right.visible{opacity:1;transform:translateX(0)}
+.fade-in-scale{opacity:0;transform:scale(0.9);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in-scale.visible{opacity:1;transform:scale(1)}
+.cart-toast{position:fixed;bottom:100px;right:30px;background:#4CAF50;color:#fff;padding:14px 24px;border-radius:8px;font-size:0.95rem;box-shadow:0 4px 16px rgba(76,175,80,0.3);z-index:9999;display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;opacity:0;transform:translateY(20px);transition:all 0.4s ease}
+@media(max-width:992px){.split-section,.about-grid{grid-template-columns:1fr;gap:40px}.split-img{order:-1}.split-img::before{display:none}.hero-content h1{font-size:2.8rem}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+nav ul{position:absolute;top:100%;left:0;width:100%;background:var(--color-white);flex-direction:column;gap:0;box-shadow:0 10px 15px rgba(0,0,0,0.05);clip-path:polygon(0 0,100% 0,100% 0,0 0);transition:clip-path 0.4s ease-in-out}
+nav ul.active{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+nav ul li{width:100%;text-align:center;border-top:1px solid #eee}
+nav ul li a{display:block;padding:15px 20px}
+.burger{display:block}.hero-content h1{font-size:2.2rem}section{padding:60px 0}.form-wrapper{padding:25px}.cart-drawer{width:100%;right:-100%}.stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}.stat-number{font-size:2.2rem}.reviews-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
+<header>
+<div class="container header-content">
+<a href="#" class="logo"><i class="fa-solid fa-cookie-bite"></i> Пряничная Мастерская</a>
+<nav><ul class="nav-links">
+<li><a href="#catalog" class="nav-link">Каталог</a></li>
+<li><a href="#masterclasses" class="nav-link">Мастер-классы</a></li>
+<li><a href="#about" class="nav-link">О мастере</a></li>
+<li><a href="#reviews" class="nav-link">Отзывы</a></li>
+<li><a href="#faq" class="nav-link">FAQ</a></li>
+<li><a href="#order" class="nav-link">Заказ</a></li>
+<li><a href="#contacts" class="nav-link">Контакты</a></li>
+</ul></nav>
+<div class="burger"><i class="fa-solid fa-bars"></i></div>
+</div>
+</header>
 
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-cookie-bite"></i> Пряничная Мастерская
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#catalog">Каталог</a></li>
-                    <li><a href="#masterclasses">Мастер-классы</a></li>
-                    <li><a href="#about">О мастере</a></li>
-                    <li><a href="#order">Заказ</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>
-            <div class="burger">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </header>
+<section id="hero">
+<div class="hero-content fade-in">
+<h1>Авторские русские пряники ручной работы</h1>
+<p>Вкус, который возвращает в детство. Натуральный мед, ароматные специи и бережное сохранение вековых традиций в каждом кусочке.</p>
+<a href="#catalog" class="btn">Перейти в каталог</a>
+</div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Авторские русские пряники ручной работы</h1>
-            <p>Вкус, который возвращает в детство. Натуральный мед, ароматные специи и бережное сохранение вековых традиций в каждом кусочке.</p>
-            <a href="#catalog" class="btn">Перейти в каталог</a>
-        </div>
-    </section>
+<section id="catalog">
+<div class="container">
+<h2 class="section-title fade-in">Каталог пряников</h2>
+<p class="section-subtitle fade-in">Свежая выпечка из натуральных ингредиентов на любой вкус</p>
+<div class="catalog-grid">
+<article class="card fade-in">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=600&auto=format&fit=crop" alt="Тульский классический"></div>
+<div class="card-body">
+<h3 class="card-title">Тульский классический</h3>
+<p class="card-desc">Традиционный печатный пряник с густым яблочным повидлом и грецким орехом. Настоящая классика к чаю.</p>
+<div class="card-footer">
+<span class="price">450 ₽</span>
+<button class="btn-cart add-to-cart" data-product='{"id":"p1","name":"Тульский классический","price":450,"img":"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=70&h=70&fit=crop"}'><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+</div>
+</div>
+</article>
+<article class="card fade-in">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1512513908852-5062a4d048fb?q=80&w=600&auto=format&fit=crop" alt="Расписной набор"></div>
+<div class="card-body">
+<h3 class="card-title">Набор «Сказка»</h3>
+<p class="card-desc">Ароматные имбирно-медовые пряники с тонкой ручной росписью сахарной глазурью. Идеальный подарок.</p>
+<div class="card-footer">
+<span class="price">1 200 ₽</span>
+<button class="btn-cart add-to-cart" data-product='{"id":"p2","name":"Набор Сказка","price":1200,"img":"https://images.unsplash.com/photo-1512513908852-5062a4d048fb?q=80&w=70&h=70&fit=crop"}'><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+</div>
+</div>
+</article>
+<article class="card fade-in">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=600&auto=format&fit=crop" alt="Медовый Боярин"></div>
+<div class="card-body">
+<h3 class="card-title">Медовый «Боярин»</h3>
+<p class="card-desc">Мягкий печатный пряник на темном гречишном меду с щедрой начинкой из настоящей вареной сгущенки.</p>
+<div class="card-footer">
+<span class="price">550 ₽</span>
+<button class="btn-cart add-to-cart" data-product='{"id":"p3","name":"Медовый Боярин","price":550,"img":"https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=70&h=70&fit=crop"}'><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+</div>
+</div>
+</article>
+<article class="card fade-in">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1576618148356-91e80bf9bca6?q=80&w=600&auto=format&fit=crop" alt="Имбирные человечки"></div>
+<div class="card-body">
+<h3 class="card-title">Имбирные человечки</h3>
+<p class="card-desc">Хрустящие снаружи и невероятно мягкие внутри, с ярким ароматом корицы. Любимое лакомство детей.</p>
+<div class="card-footer">
+<span class="price">350 ₽</span>
+<button class="btn-cart add-to-cart" data-product='{"id":"p4","name":"Имбирные человечки","price":350,"img":"https://images.unsplash.com/photo-1576618148356-91e80bf9bca6?q=80&w=70&h=70&fit=crop"}'><i class="fa-solid fa-cart-plus"></i> В корзину</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
 
-    <!-- Catalog Section -->
-    <section id="catalog">
-        <div class="container">
-            <h2 class="section-title">Каталог пряников</h2>
-            <p class="section-subtitle">Свежая выпечка из натуральных ингредиентов на любой вкус</p>
-            
-            <div class="catalog-grid">
-                <!-- Card 1 -->
-                <article class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=600&auto=format&fit=crop" alt="Тульский классический">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Тульский классический</h3>
-                        <p class="card-desc">Традиционный печатный пряник с густым яблочным повидлом и грецким орехом. Настоящая классика к чаю.</p>
-                        <div class="card-footer">
-                            <span class="price">450 ₽</span>
-                            <a href="#order" class="btn btn-outline" onclick="selectItem('Тульский классический')">Заказать</a>
-                        </div>
-                    </div>
-                </article>
+<section id="masterclasses">
+<div class="container split-section">
+<div class="split-content fade-in-left">
+<h2>Искусство пряничной росписи</h2>
+<p>Приглашаем детей и взрослых на увлекательные мастер-классы в нашей уютной студии! Погрузитесь в атмосферу творчества и ароматов свежей выпечки.</p>
+<p>Мы раскроем секреты идеального теста, научим делать контурную и заливочную глазурь, а главное — вы сами создадите свой сладкий шедевр.</p>
+<ul class="features-list">
+<li><i class="fa-solid fa-check"></i> Групповые и индивидуальные занятия</li>
+<li><i class="fa-solid fa-check"></i> Оффлайн в студии и Онлайн формат</li>
+<li><i class="fa-solid fa-check"></i> Все материалы и ингредиенты включены</li>
+<li><i class="fa-solid fa-check"></i> Красивая упаковка готовых изделий</li>
+</ul>
+<button class="btn add-to-cart" data-product='{"id":"mc1","name":"Мастер-класс по росписи","price":1500,"img":""}'><i class="fa-solid fa-cart-plus"></i> Записаться на мастер-класс</button>
+</div>
+<div class="split-img fade-in-right">
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop" alt="Мастер-класс по росписи пряников">
+</div>
+</div>
+</section>
 
-                <!-- Card 2 -->
-                <article class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1512513908852-5062a4d048fb?q=80&w=600&auto=format&fit=crop" alt="Расписной набор">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Набор «Сказка»</h3>
-                        <p class="card-desc">Ароматные имбирно-медовые пряники с тонкой ручной росписью сахарной глазурью. Идеальный подарок.</p>
-                        <div class="card-footer">
-                            <span class="price">1 200 ₽</span>
-                            <a href="#order" class="btn btn-outline" onclick="selectItem('Набор Сказка')">Заказать</a>
-                        </div>
-                    </div>
-                </article>
+<section id="about">
+<div class="container about-grid">
+<div class="about-img fade-in-left"><img src="https://images.unsplash.com/photo-1583338917451-fade27510584?q=80&w=600&auto=format&fit=crop" alt="Фото пряничного мастера"></div>
+<div class="about-content fade-in-right">
+<h2 class="section-title" style="text-align:left;">О мастере и традициях</h2><br>
+<p>Здравствуйте! Я — Анна, пряничный мастер с более чем 10-летним стажем. Моя любовь к выпечке началась с пожелтевших страниц бабушкиной книги рецептов.</p><br>
+<p>Для меня создание пряника — это не просто кулинария, а настоящее искусство. В своей мастерской я строго соблюдаю старинные технологии, не используя искусственных консервантов.</p><br>
+<p>В основе моих рецептов: фермерское масло 82.5%, отборный мед с пасеки и уникальный букет специй — корица, кардамон, мускатный орех, имбирь и гвоздика.</p>
+</div>
+</div>
+</section>
 
-                <!-- Card 3 -->
-                <article class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=600&auto=format&fit=crop" alt="Медовый Боярин">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Медовый «Боярин»</h3>
-                        <p class="card-desc">Мягкий печатный пряник на темном гречишном меду с щедрой начинкой из настоящей вареной сгущенки.</p>
-                        <div class="card-footer">
-                            <span class="price">550 ₽</span>
-                            <a href="#order" class="btn btn-outline" onclick="selectItem('Медовый Боярин')">Заказать</a>
-                        </div>
-                    </div>
-                </article>
+<section id="achievements">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-item fade-in-scale"><div class="stat-icon"><i class="fa-solid fa-calendar"></i></div><span class="stat-number">10+</span><span class="stat-label">Лет опыта</span></div>
+<div class="stat-item fade-in-scale"><div class="stat-icon"><i class="fa-solid fa-cookie-bite"></i></div><span class="stat-number">15 000+</span><span class="stat-label">Счастливых клиентов</span></div>
+<div class="stat-item fade-in-scale"><div class="stat-icon"><i class="fa-solid fa-leaf"></i></div><span class="stat-number">100%</span><span class="stat-label">Натуральный состав</span></div>
+<div class="stat-item fade-in-scale"><div class="stat-icon"><i class="fa-solid fa-star"></i></div><span class="stat-number">4.9</span><span class="stat-label">Средний рейтинг</span></div>
+</div>
+</div>
+</section>
 
-                <!-- Card 4 -->
-                <article class="card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1576618148356-91e80bf9bca6?q=80&w=600&auto=format&fit=crop" alt="Имбирные человечки">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Имбирные человечки</h3>
-                        <p class="card-desc">Хрустящие снаружи и невероятно мягкие внутри, с ярким ароматом корицы. Любимое лакомство детей.</p>
-                        <div class="card-footer">
-                            <span class="price">350 ₽</span>
-                            <a href="#order" class="btn btn-outline" onclick="selectItem('Имбирные человечки')">Заказать</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+<section id="reviews">
+<div class="container">
+<h2 class="section-title fade-in">Отзывы наших гостей</h2>
+<p class="section-subtitle fade-in">Мы ценим доверие и любим, когда ваш отзыв согревает сердца</p>
+<div class="reviews-grid">
+<div class="review-card fade-in">
+<div class="review-header"><img class="review-avatar" src="https://i.pravatar.cc/56?img=1" alt="Елена" loading="lazy"><div><div class="review-name">Елена</div><div class="review-date">2 недели назад</div></div></div>
+<div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="review-text">«Заказывала набор «Сказка» в подарок коллеге — невероятно красиво! Пряники пахнут медом и специями, очень нежные и вкусные.»</p>
+</div>
+<div class="review-card fade-in">
+<div class="review-header"><img class="review-avatar" src="https://i.pravatar.cc/56?img=3" alt="Алексей" loading="lazy"><div><div class="review-name">Алексей</div><div class="review-date">1 месяц назад</div></div></div>
+<div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="review-text">«Был с дочкой на мастер-классе — полный восторг! Анна душевно всё объясняет, помогает. Обязательно придем еще всей семьей!»</p>
+</div>
+<div class="review-card fade-in">
+<div class="review-header"><img class="review-avatar" src="https://i.pravatar.cc/56?img=5" alt="Мария" loading="lazy"><div><div class="review-name">Мария</div><div class="review-date">3 недели назад</div></div></div>
+<div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="review-text">«Тульский классический пряник — любовь с первого укуса! Настоящий, как в детстве у бабушки. Мягкий, с повидлом и орехами.»</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Masterclasses Section -->
-    <section id="masterclasses">
-        <div class="container split-section">
-            <div class="split-content">
-                <h2>Искусство пряничной росписи</h2>
-                <p>Приглашаем детей и взрослых на увлекательные мастер-классы в нашей уютной студии! Погрузитесь в атмосферу творчества и ароматов свежей выпечки.</p>
-                <p>Мы раскроем секреты идеального теста, научим делать контурную и заливочную глазурь, а главное — вы сами создадите свой сладкий шедевр.</p>
-                
-                <ul class="features-list">
-                    <li><i class="fa-solid fa-check"></i> Групповые и индивидуальные занятия</li>
-                    <li><i class="fa-solid fa-check"></i> Оффлайн в студии и Онлайн формат</li>
-                    <li><i class="fa-solid fa-check"></i> Все материалы и ингредиенты включены</li>
-                    <li><i class="fa-solid fa-check"></i> Красивая упаковка готовых изделий</li>
-                </ul>
-                
-                <a href="#order" class="btn" onclick="selectItem('Мастер-класс')">Записаться на мастер-класс</a>
-            </div>
-            <div class="split-img">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop" alt="Мастер-класс по росписи пряников">
-            </div>
-        </div>
-    </section>
+<section id="faq">
+<div class="container">
+<h2 class="section-title fade-in">Часто задаваемые вопросы</h2>
+<p class="section-subtitle fade-in">Всё, что вы хотели узнать о наших пряниках и мастер-классах</p>
+<div class="faq-list fade-in">
+<div class="faq-item active">
+<button class="faq-question"><span>Как долго хранятся пряники?</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Благодаря натуральному меду наши пряники сохраняют свежесть до 3-4 недель. Расписные пряники могут радовать вас до 6 месяцев.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question"><span>Есть ли доставка по России?</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Да, отправляем заказы через СДЭК и Почту России. Каждый пряник тщательно упаковывается в крафтовую бумагу и картонную коробку.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question"><span>Можно заказать с индивидуальным дизайном?</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Конечно! Принимаем заказы на корпоративные подарки с логотипом и именные пряники. Выберите «Свой вариант» в форме заказа.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question"><span>Подходят ли пряники для аллергиков?</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Пряники содержат муку (глютен), яйца, масло и мед. В состав могут входить орехи. Сообщите об ограничениях в комментарии к заказу.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question"><span>Что взять с собой на мастер-класс?</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Ничего! Все материалы предоставляем на месте. Нужны только хорошее настроение и желание творить.</p></div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container about-grid">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1583338917451-fade27510584?q=80&w=600&auto=format&fit=crop" alt="Фото пряничного мастера">
-            </div>
-            <div class="about-content">
-                <h2 class="section-title" style="text-align: left;">О мастере и традициях</h2>
-                <br>
-                <p>Здравствуйте! Я — Анна, пряничный мастер с более чем 10-летним стажем. Моя бесконечная любовь к выпечке началась еще в детстве, с пожелтевших страниц бабушкиной книги рецептов.</p>
-                <br>
-                <p>Для меня создание пряника — это не просто кулинария, это настоящее искусство и способ поделиться душевным теплом. В своей мастерской я строго соблюдаю старинные технологии, не используя никаких искусственных консервантов или усилителей вкуса.</p>
-                <br>
-                <p>В основе моих рецептов: настоящее фермерское сливочное масло 82.5%, отборный цветочный и гречишный мед с пасеки, и уникальный авторский букет свежемолотых специй — корица, кардамон, мускатный орех, имбирь и гвоздика. Только натуральный вкус и тепло ручной работы!</p>
-            </div>
-        </div>
-    </section>
+<section id="order">
+<div class="container">
+<h2 class="section-title fade-in">Оформление заказа</h2>
+<p class="section-subtitle fade-in">Оставьте заявку, и мы свяжемся с вами для уточнения деталей</p>
+<div class="form-wrapper fade-in">
+<div id="cart-summary"><h4><i class="fa-solid fa-shopping-cart"></i> Ваш заказ:</h4><div id="cart-summary-items"></div><div class="cart-total"><span>Итого:</span><span id="cart-summary-total">0 ₽</span></div></div>
+<form id="order-form" action="#" method="POST" novalidate>
+<div class="form-group"><label for="name">Ваше имя *</label><input type="text" id="name" class="form-control" placeholder="Иван Иванов" required autocomplete="name"><div class="form-error" id="name-error">Пожалуйста, укажите ваше имя</div></div>
+<div class="form-group"><label for="phone">Номер телефона *</label><input type="tel" id="phone" class="form-control" placeholder="+7 (999) 000-00-00" required autocomplete="tel"><div class="form-error" id="phone-error">Пожалуйста, введите корректный номер телефона</div></div>
+<div class="form-group"><label for="service">Что вас интересует? *</label><select id="service" class="form-control" required><option value="" disabled selected>Выберите из списка...</option><optgroup label="Каталог пряников"><option value="Тульский классический">Тульский классический пряник</option><option value="Набор Сказка">Расписной набор «Сказка»</option><option value="Медовый Боярин">Медовый пряник «Боярин»</option><option value="Имбирные человечки">Набор имбирных человечков</option><option value="Индивидуальный заказ">Свой вариант (на заказ)</option></optgroup><optgroup label="Мастер-классы"><option value="Мастер-класс (дети)">Детский мастер-класс по росписи</option><option value="Мастер-класс (взрослые)">Взрослый мастер-класс</option><option value="Мастер-класс (онлайн)">Онлайн мастер-класс</option></optgroup></select></div>
+<div class="form-group"><label for="comment">Комментарий к заказу</label><textarea id="comment" class="form-control" placeholder="Напишите пожелания по начинке, дате доставки или вопросы..."></textarea></div>
+<input type="hidden" id="cart-data" name="cart_data" value=""><input type="hidden" id="cart-count" name="cart_count" value="0">
+<button type="submit" class="btn form-submit">Отправить заказ</button>
+</form>
+</div>
+</div>
+</section>
 
-    <!-- Order Form Section -->
-    <section id="order">
-        <div class="container">
-            <h2 class="section-title">Оформление заказа</h2>
-            <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами для уточнения деталей</p>
-            
-            <div class="form-wrapper">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Ваш заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.');">
-                    <div class="form-group">
-                        <label for="name">Ваше имя *</label>
-                        <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Номер телефона *</label>
-                        <input type="tel" id="phone" class="form-control" placeholder="+7 (999) 000-00-00" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Что вас интересует? *</label>
-                        <select id="service" class="form-control" required>
-                            <option value="" disabled selected>Выберите из списка...</option>
-                            <optgroup label="Каталог пряников">
-                                <option value="Тульский классический">Тульский классический пряник</option>
-                                <option value="Набор Сказка">Расписной набор «Сказка»</option>
-                                <option value="Медовый Боярин">Медовый пряник «Боярин»</option>
-                                <option value="Имбирные человечки">Набор имбирных человечков</option>
-                                <option value="Индивидуальный заказ">Свой вариант (на заказ)</option>
-                            </optgroup>
-                            <optgroup label="Мастер-классы">
-                                <option value="Мастер-класс (дети)">Детский мастер-класс по росписи</option>
-                                <option value="Мастер-класс (взрослые)">Взрослый мастер-класс</option>
-                                <option value="Мастер-класс (онлайн)">Онлайн мастер-класс</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comment">Комментарий к заказу</label>
-                        <textarea id="comment" class="form-control" placeholder="Напишите здесь пожелания по начинке, дате доставки или вопросы по мастер-классу..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn form-submit">Отправить заказ</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<footer id="contacts">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4 class="logo"><i class="fa-solid fa-cookie-bite"></i> Пряничная</h4><p style="opacity:0.8;margin-top:15px;font-size:0.95rem;">Возрождаем традиции русских пряников с любовью к каждому клиенту. Натурально, вкусно, красиво.</p></div>
+<div class="footer-col"><h4>Контакты</h4><a href="tel:+79991234567"><i class="fa-solid fa-phone"></i> +7 (999) 123-45-67</a><a href="mailto:hello@pryanik-master.ru"><i class="fa-solid fa-envelope"></i> hello@pryanik-master.ru</a><p><i class="fa-solid fa-location-dot"></i> г. Москва, ул. Пекарская, д. 12, студия 4</p><p><i class="fa-regular fa-clock"></i> Пн-Вс: с 10:00 до 20:00</p></div>
+<div class="footer-col"><h4>Мы в соцсетях</h4><p style="margin-bottom:20px;">Подписывайтесь на новинки и анонсы:</p><div class="social-links"><a href="#" aria-label="ВКонтакте"><i class="fa-brands fa-vk"></i></a><a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2025 Пряничная Мастерская. Все права защищены.</p></div>
+</div>
+</footer>
 
-    <!-- Footer & Contacts -->
-    <footer id="contacts">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="logo"><i class="fa-solid fa-cookie-bite"></i> Пряничная</h4>
-                    <p style="opacity: 0.8; margin-top: 15px; font-size: 0.95rem;">
-                        Возрождаем традиции русских пряников с любовью к каждому клиенту. Натурально, вкусно, красиво.
-                    </p>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Контакты</h4>
-                    <a href="tel:+79991234567"><i class="fa-solid fa-phone"></i> +7 (999) 123-45-67</a>
-                    <a href="mailto:hello@pryanik-master.ru"><i class="fa-solid fa-envelope"></i> hello@pryanik-master.ru</a>
-                    <p><i class="fa-solid fa-location-dot"></i> г. Москва, ул. Пекарская, д. 12, студия 4</p>
-                    <p><i class="fa-regular fa-clock"></i> Пн-Вс: с 10:00 до 20:00</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Мы в соцсетях</h4>
-                    <p style="margin-bottom: 20px;">Подписывайтесь, чтобы не пропустить новинки и анонсы мастер-классов:</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-vk"></i></a>
-                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Пряничная Мастерская. Все права защищены. Сайт создан исключительно в демонстрационных целях.</p>
-            </div>
-        </div>
-    </footer>
+<button class="cart-floating" id="cart-floating" aria-label="Корзина"><i class="fa-solid fa-bag-shopping"></i><span class="cart-badge" id="cart-badge">0</span></button>
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+<div class="cart-drawer-header"><h3><i class="fa-solid fa-shopping-cart"></i> Корзина</h3><button class="cart-drawer-close" id="cart-drawer-close" aria-label="Закрыть">&times;</button></div>
+<div class="cart-drawer-body" id="cart-drawer-body">
+<div class="cart-empty" id="cart-empty"><i class="fa-solid fa-cookie-bite"></i><p>Ваша корзина пуста</p><p style="font-size:0.9rem;margin-top:5px;">Выберите пряники из каталога</p></div>
+<div id="cart-items-list"></div>
+</div>
+<div class="cart-drawer-footer" id="cart-drawer-footer" style="display:none;">
+<div class="cart-drawer-total"><span>Итого:</span><span id="cart-drawer-total">0 ₽</span></div>
+<a href="#order" class="btn cart-drawer-btn" id="cart-checkout-btn"><i class="fa-solid fa-arrow-right"></i> Оформить заказ</a>
+</div>
+</div>
 
-    <!-- Scripts -->
-    <script>
-        // Burger Menu Toggle
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-        const navItems = document.querySelectorAll('.nav-links li a');
+<div class="modal-overlay" id="success-modal">
+<div class="modal-content">
+<div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+<h3>Спасибо за заказ!</h3>
+<p>Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+<div class="modal-details" id="modal-details">
+<p><strong>Имя:</strong> <span id="modal-name"></span></p>
+<p><strong>Телефон:</strong> <span id="modal-phone"></span></p>
+<p><strong>Заказ:</strong> <span id="modal-order"></span></p>
+<p><strong>Комментарий:</strong> <span id="modal-comment"></span></p>
+</div>
+<button class="btn modal-close-btn" id="modal-close-btn">Продолжить покупки</button>
+</div>
+</div>
 
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = burger.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
+<button id="back-to-top" aria-label="Наверх"><i class="fa-solid fa-chevron-up"></i></button>
 
-        // Close menu when clicking a link
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                burger.querySelector('i').classList.remove('fa-xmark');
-                burger.querySelector('i').classList.add('fa-bars');
-            });
-        });
-
-        // Pre-select item in the order form
-        function selectItem(itemName) {
-            const selectElement = document.getElementById('service');
-            for (let i = 0; i < selectElement.options.length; i++) {
-                if (selectElement.options[i].value.includes(itemName) || itemName.includes(selectElement.options[i].value)) {
-                    selectElement.selectedIndex = i;
-                    break;
-                }
-            }
-        }
-    </script>
+<script>
+const PRODUCTS = {
+p1:{id:'p1',name:'Тульский классический',price:450,img:'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=70&h=70&fit=crop'},
+p2:{id:'p2',name:'Набор Сказка',price:1200,img:'https://images.unsplash.com/photo-1512513908852-5062a4d048fb?q=80&w=70&h=70&fit=crop'},
+p3:{id:'p3',name:'Медовый Боярин',price:550,img:'https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=70&h=70&fit=crop'},
+p4:{id:'p4',name:'Имбирные человечки',price:350,img:'https://images.unsplash.com/photo-1576618148356-91e80bf9bca6?q=80&w=70&h=70&fit=crop'},
+mc1:{id:'mc1',name:'Мастер-класс по росписи',price:1500,img:''}
+};
+const Cart={
+items:[],
+load(){try{const s=localStorage.getItem('pryanik-cart');this.items=s?JSON.parse(s):[]}catch{this.items=[]}},
+save(){localStorage.setItem('pryanik-cart',JSON.stringify(this.items))},
+getCount(){return this.items.reduce((s,i)=>s+i.quantity,0)},
+getTotal(){return this.items.reduce((s,i)=>s+i.price*i.quantity,0)},
+find(id){return this.items.find(i=>i.id===id)},
+add(p){const e=this.find(p.id);if(e){e.quantity+=1}else{this.items.push({id:p.id,name:p.name,price:p.price,img:p.img||'',quantity:1})}this.save();this.render();this.notify('«'+p.name+'» добавлен в корзину')},
+updateQuantity(id,d){const e=this.find(id);if(!e)return;e.quantity+=d;if(e.quantity<=0)this.remove(id);else{this.save();this.render()}},
+remove(id){this.items=this.items.filter(i=>i.id!==id);this.save();this.render()},
+clear(){this.items=[];this.save();this.render()},
+fmt(p){return p.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₽'},
+notify(m){const o=document.querySelector('.cart-toast');if(o)o.remove();const t=document.createElement('div');t.className='cart-toast';t.innerHTML='<i class="fa-solid fa-check-circle"></i> '+m;document.body.appendChild(t);requestAnimationFrame(()=>{t.style.opacity='1';t.style.transform='translateY(0)'});setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(20px)';setTimeout(()=>t.remove(),400)},2500)},
+render(){const b=document.getElementById('cart-badge');if(b)b.textContent=this.getCount();this.renderDrawer();this.renderSummary()},
+renderDrawer(){const list=document.getElementById('cart-items-list'),empty=document.getElementById('cart-empty'),footer=document.getElementById('cart-drawer-footer'),total=document.getElementById('cart-drawer-total');if(!list)return;if(!this.items.length){list.innerHTML='';if(empty)empty.style.display='block';if(footer)footer.style.display='none';return}if(empty)empty.style.display='none';if(footer)footer.style.display='block';list.innerHTML=this.items.map(i=>'<div class="cart-item" data-id="'+i.id+'">'+(i.img?'<img src="'+i.img+'" alt="'+i.name+'" class="cart-item-img" loading="lazy">':'<div class="cart-item-img" style="background:var(--color-bg-sec);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-accent);"><i class="fa-solid fa-chalkboard-user"></i></div>')+'<div class="cart-item-info"><div class="cart-item-title">'+i.name+'</div><div class="cart-item-price">'+this.fmt(i.price)+'</div><div class="cart-item-controls"><button class="cart-qty-minus" data-id="'+i.id+'" aria-label="Уменьшить">−</button><span class="qty">'+i.quantity+'</span><button class="cart-qty-plus" data-id="'+i.id+'" aria-label="Увеличить">+</button><button class="cart-item-remove" data-id="'+i.id+'" aria-label="Удалить"><i class="fa-solid fa-trash-can"></i></button></div></div></div>').join('');if(total)total.textContent=this.fmt(this.getTotal());Array.from(list.querySelectorAll('.cart-qty-minus')).forEach(b=>b.addEventListener('click',()=>this.updateQuantity(b.dataset.id,-1)));Array.from(list.querySelectorAll('.cart-qty-plus')).forEach(b=>b.addEventListener('click',()=>this.updateQuantity(b.dataset.id,1)));Array.from(list.querySelectorAll('.cart-item-remove')).forEach(b=>b.addEventListener('click',()=>this.remove(b.dataset.id)))},
+renderSummary(){const s=document.getElementById('cart-summary'),i=document.getElementById('cart-summary-items'),t=document.getElementById('cart-summary-total'),d=document.getElementById('cart-data'),c=document.getElementById('cart-count');if(!s)return;if(!this.items.length){s.classList.remove('show');if(d)d.value='';if(c)c.value='0';return}s.classList.add('show');if(i)i.innerHTML=this.items.map(it=>'<div class="cart-summary-item"><span>'+it.name+' × '+it.quantity+'</span><span>'+this.fmt(it.price*it.quantity)+'</span></div>').join('');if(t)t.textContent=this.fmt(this.getTotal());if(d)d.value=JSON.stringify(this.items);if(c)c.value=this.getCount()}
+};
+document.getElementById('cart-floating').addEventListener('click',()=>{document.getElementById('cart-drawer').classList.add('open');document.getElementById('cart-overlay').classList.add('open');document.body.style.overflow='hidden'});
+document.getElementById('cart-drawer-close').addEventListener('click',()=>{document.getElementById('cart-drawer').classList.remove('open');document.getElementById('cart-overlay').classList.remove('open');document.body.style.overflow=''});
+document.getElementById('cart-overlay').addEventListener('click',()=>{document.getElementById('cart-drawer').classList.remove('open');document.getElementById('cart-overlay').classList.remove('open');document.body.style.overflow=''});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('cart-drawer').classList.contains('open')){document.getElementById('cart-drawer').classList.remove('open');document.getElementById('cart-overlay').classList.remove('open');document.body.style.overflow=''}});
+document.querySelectorAll('.add-to-cart').forEach(btn=>{btn.addEventListener('click',function(e){e.preventDefault();let p;try{p=JSON.parse(this.dataset.product)}catch{return}const pr=PRODUCTS[p.id]||p;Cart.add(pr)})});
+const burger=document.querySelector('.burger'),navLinks=document.querySelector('.nav-links');
+Array.from(document.querySelectorAll('.nav-links li a')).forEach(i=>i.addEventListener('click',()=>{navLinks.classList.remove('active');const ic=burger.querySelector('i');ic.classList.remove('fa-xmark');ic.classList.add('fa-bars')}));
+burger.addEventListener('click',()=>{navLinks.classList.toggle('active');const ic=burger.querySelector('i');if(navLinks.classList.contains('active')){ic.classList.remove('fa-bars');ic.classList.add('fa-xmark')}else{ic.classList.remove('fa-xmark');ic.classList.add('fa-bars')}});
+function scrollspy(){const s=document.querySelectorAll('section[id]'),n=document.querySelectorAll('.nav-link');let c='';Array.from(s).forEach(sec=>{const t=sec.offsetTop-150,b=t+sec.offsetHeight;if(window.scrollY>=t&&window.scrollY<b)c=sec.getAttribute('id')});Array.from(n).forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+c)l.classList.add('active')})}
+window.addEventListener('scroll',scrollspy);window.addEventListener('load',scrollspy);
+const btt=document.getElementById('back-to-top');
+window.addEventListener('scroll',()=>{window.scrollY>400?btt.classList.add('show'):btt.classList.remove('show')});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+Array.from(document.querySelectorAll('.faq-question')).forEach(btn=>{btn.addEventListener('click',function(){const item=this.closest('.faq-item'),a=item.classList.contains('active');Array.from(document.querySelectorAll('.faq-item')).forEach(i=>i.classList.remove('active'));if(!a)item.classList.add('active')})});
+const pi=document.getElementById('phone');
+if(pi){pi.addEventListener('input',function(){let v=this.value.replace(/\D/g,'');if(!v.length){this.value='';return}let f='+7';if(v.length>1)f+=' ('+v.substring(1,4);if(v.length>=5)f+=') '+v.substring(4,7);if(v.length>=8)f+='-'+v.substring(7,9);if(v.length>=10)f+='-'+v.substring(9,11);this.value=f});pi.addEventListener('focus',function(){if(this.value===''){this.value='+7 (';setTimeout(()=>this.selectionStart=this.selectionEnd=this.value.length,0)}})}
+const form=document.getElementById('order-form'),modal=document.getElementById('success-modal');
+document.getElementById('modal-close-btn').addEventListener('click',()=>{modal.classList.remove('open');document.body.style.overflow=''});
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open')){modal.classList.remove('open');document.body.style.overflow=''}});
+if(form){form.addEventListener('submit',function(e){e.preventDefault();let ok=true;const nm=document.getElementById('name'),ph=document.getElementById('phone'),ne=document.getElementById('name-error'),pe=document.getElementById('phone-error');nm.classList.remove('error');ph.classList.remove('error');ne.classList.remove('show');pe.classList.remove('show');if(!nm.value.trim()){nm.classList.add('error');ne.classList.add('show');ok=false}if(ph.value.replace(/\D/g,'').length<11){ph.classList.add('error');pe.classList.add('show');ok=false}if(!ok)return;const ci=Cart.items;let os=ci.length?ci.map(i=>i.name+' × '+i.quantity+' — '+Cart.fmt(i.price*i.quantity)).join(', ')+' (Итого: '+Cart.fmt(Cart.getTotal())+')':(document.getElementById('service').options[document.getElementById('service').selectedIndex]?.text||'Не выбрано');document.getElementById('modal-name').textContent=nm.value.trim();document.getElementById('modal-phone').textContent=ph.value.trim();document.getElementById('modal-order').textContent=os;document.getElementById('modal-comment').textContent=document.getElementById('comment').value.trim()||'Нет';modal.classList.add('open');document.body.style.overflow='hidden';Cart.clear();form.reset()})}
+function initAnim(){const e=document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale');if(!e.length)return;new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.15,rootMargin:'0px 0px -50px 0px'}).observe(e[0]);for(let i=1;i<e.length;i++){new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.15,rootMargin:'0px 0px -50px 0px'}).observe(e[i])}}
+document.addEventListener('DOMContentLoaded',()=>{Cart.load();Cart.render();initAnim();setTimeout(scrollspy,100)});
+</script>
 </body>
 </html>
